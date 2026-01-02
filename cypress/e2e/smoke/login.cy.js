@@ -6,7 +6,7 @@ describe('Login Functionality', () => {
   });
 
   it('should login successfully', () => {
-    cy.login('standard_user', 'secret_sauce');
+    cy.login();
     cy.url().should('include', 'inventory.html');
   });
 });

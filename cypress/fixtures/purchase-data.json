@@ -1,0 +1,10 @@
+{
+  "user": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "postalCode": "12345"
+  },
+  "messages": {
+    "success": "Thank you for your order!"
+  }
+}

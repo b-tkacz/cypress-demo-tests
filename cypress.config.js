@@ -1,16 +1,25 @@
 const { defineConfig } = require('cypress');
+const fs = require('fs-extra');
+const path = require('path');
+
+async function getConfigurationByFile(file) {
+  const pathToConfigFile = path.resolve('cypress', 'config', `${file}.json`);
+  return fs.readJson(pathToConfigFile);
+}
 
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
-    setupNodeEvents(on, config) {
+    async setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
-      // implement node event listeners here
+
+      const file = config.env.configFile || 'standard';
+
+      const configJson = await getConfigurationByFile(file);
+      config.env = { ...config.env, ...configJson };
+      return config;
     },
     baseUrl: 'https://www.saucedemo.com',
-  },
-  env: {
-    userName: 'standard_user',
-    password: 'secret_sauce',
+    experimentalRunAllSpecs: true,
   },
 });

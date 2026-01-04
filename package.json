@@ -1,9 +1,15 @@
 {
+  "scripts": {
+    "cy:open": "cypress open",
+    "test:standard": "cypress run --env configFile=standard",
+    "test:problem": "cypress run --env configFile=problem"
+  },
   "devDependencies": {
     "cypress": "^15.6.0",
     "cypress-mochawesome-reporter": "^4.0.2",
     "eslint": "^9.39.2",
     "eslint-plugin-cypress": "^5.2.0",
+    "fs-extra": "^11.3.3",
     "prettier": "^3.7.4"
   }
 }

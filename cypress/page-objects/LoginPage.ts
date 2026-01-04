@@ -14,7 +14,7 @@ class LoginPage extends Page {
   open() {
     return super.open('/');
   }
-  login(username, password) {
+  login(username: string, password: string) {
     this.usernameInput.type(username);
     this.passwordInput.type(password);
     this.loginButton.click();

@@ -15,7 +15,7 @@ export default class Page {
    * Wrapper for consistent element retrieval
    * @param selector CSS selector
    */
-  getElement(selector) {
+  getElement(selector: string): Cypress.Chainable {
     return cy.get(selector);
   }
 }

@@ -17,7 +17,7 @@ class CheckoutPage extends Page {
     return this.getElement('[data-test="finish"]');
   }
 
-  fillInformation(firstName, lastName, zip) {
+  fillInformation(firstName: string, lastName: string, zip: string) {
     this.firstNameInput.type(firstName);
     this.lastNameInput.type(lastName);
     this.postalCodeInput.type(zip);

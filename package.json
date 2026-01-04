@@ -5,11 +5,13 @@
     "test:problem": "cypress run --env configFile=problem"
   },
   "devDependencies": {
+    "@types/node": "^25.0.3",
     "cypress": "^15.6.0",
     "cypress-mochawesome-reporter": "^4.0.2",
     "eslint": "^9.39.2",
     "eslint-plugin-cypress": "^5.2.0",
     "fs-extra": "^11.3.3",
-    "prettier": "^3.7.4"
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3"
   }
 }

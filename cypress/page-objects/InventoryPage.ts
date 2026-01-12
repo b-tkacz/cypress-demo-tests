@@ -8,7 +8,7 @@ class InventoryPage extends Page {
     return this.getElement('.shopping_cart_link');
   }
 
-  addToCart(productName) {
+  addToCart(productName: string) {
     this.inventoryItems
       .contains(productName)
       .parents('.inventory_item')
